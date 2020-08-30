@@ -6,6 +6,11 @@ const Command = require('./commands')
 
 const Config = require('./Config')
 
+if (!Config.Token) {
+    console.log('No Token Specified Please Put Your Bot Token In Config.json File')
+    process.exit()
+}
+
 //Bot Init
 client.on('ready', () => {
     console.log("Connected as " + client.user.tag)
