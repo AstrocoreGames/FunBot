@@ -7,5 +7,6 @@ var ConfigF = JSON.parse(fs.readFileSync("Config.json", 'utf8'))
 Config.Prefix = ConfigF.Prefix
 
 Config.Token = ConfigF.Token
+//Config.Token = fs.readFileSync("token.txt", 'utf8')
 
 module.exports = Config

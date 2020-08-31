@@ -7,8 +7,8 @@ If you wish to help develop Fun Bot please feel free to make a pull request with
 ## To Do
 
 ### Commands to add
-- [ ] 8ball
-- [ ] Joke
-- [ ] Meme
-- [ ] Dice Roll
-- [ ] Rock Paper Scissors
+- [x] 8ball
+- [x] Joke
+- [x] Meme
+- [x] Dice Roll
+- [x] Rock Paper Scissors
