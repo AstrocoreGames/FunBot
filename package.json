@@ -1,6 +1,10 @@
 {
   "name": "FunBot",
   "version": "1.0.0",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
   "dependencies": {
     "discord.js": "^12.3.1",
     "fs": "0.0.1-security",
