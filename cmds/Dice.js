@@ -5,6 +5,7 @@ function Random(max) {
 }
 
 var cmd = function (msg, args) {
+    msg.react('🎲')
     const Num = Random(6)
     const DiceEmbed = Embed.Create('🎲 Dice 🎲', '', [{name: 'Number', value: '`' + Num + '`'}])
     msg.channel.send(DiceEmbed)

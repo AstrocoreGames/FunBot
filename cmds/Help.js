@@ -13,6 +13,7 @@ const HelpEmbed = Embed.Create('Help', 'Prefix = ' + Config.Prefix, [
 ])
 
 var cmd = function(msg, args) {
+    msg.react('✋')
     msg.channel.send(HelpEmbed)
 }
 

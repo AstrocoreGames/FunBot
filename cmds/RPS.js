@@ -59,8 +59,11 @@ function Game(msg, Hand) {
 }
 
 var cmd = function (msg, args) {
-    const Hand = args[0].toLowerCase()
-    if (Hand) {
+    msg.react('🗿')
+    msg.react('📄')
+    msg.react('✂')
+    if (args[0].toLowerCase()) {
+        const Hand = args[0].toLowerCase()
         if (Hand === 'rock' || Hand === 'paper' || Hand === 'scissors') {
             Game(msg, Hand)
         } else {

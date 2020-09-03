@@ -235,6 +235,7 @@ function Emb(txt) {
 }
 
 var cmd = function(msg, args) {
+    msg.react('🦸')
     if (args[0]) {
         if (args[0].toLowerCase() == "all") {
             msg.channel.send(Emb("`" + Hero.Gen() + "`"))
