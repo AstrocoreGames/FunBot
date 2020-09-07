@@ -1,14 +1,5 @@
 const fs = require('fs')
 const Config = require('./Config')
-//Commands
-const HelpCmd = require('./cmds/help')
-const CreditsCmd = require('./cmds/credits')
-const OverWatchHeroGenCmd = require('./cmds/overwatchgen')
-const Magic8BallCmd = require('./cmds/8ball')
-const JokeCmd = require('./cmds/joke')
-const MemeCmd = require('./cmds/meme')
-const DiceCmd = require('./cmds/dice')
-const RPSCmd = require('./cmds/rps')
 
 var commands = []
 
