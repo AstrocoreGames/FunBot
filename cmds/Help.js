@@ -2,8 +2,8 @@ const Embed = require('../util/Embed')
 const Config = require('../Config')
 
 const HelpEmbed = Embed.Create('Help', 'Prefix = ' + Config.Prefix, [
-    {name: '`help`', value: 'Shows You All The Commmands You Can Use With Fun Bot'},
-    {name: '`credits`', value: 'Shows the credits for Fun Bot'},
+    {name: '`Help`', value: 'Shows You All The Commmands You Can Use With Fun Bot'},
+    {name: '`Credits`', value: 'Shows the credits for Fun Bot'},
     {name: "`OverwatchGen`", value: "Generates a random Overwatch Hero"},
     {name: '`8Ball`', value: 'Answers you question in an 8Ball like way'},
     {name: '`Joke`', value: 'Generates a random joke'},

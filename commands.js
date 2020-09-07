@@ -1,13 +1,25 @@
+const fs = require('fs')
 const Config = require('./Config')
 //Commands
-const HelpCmd = require('./cmds/Help')
-const CreditsCmd = require('./cmds/Credits')
-const OverWatchHeroGenCmd = require('./cmds/OverwatchHeroGen')
-const Magic8BallCmd = require('./cmds/8Ball')
-const JokeCmd = require('./cmds/Joke')
-const MemeCmd = require('./cmds/Meme')
-const DiceCmd = require('./cmds/Dice')
-const RPSCmd = require('./cmds/RPS')
+const HelpCmd = require('./cmds/help')
+const CreditsCmd = require('./cmds/credits')
+const OverWatchHeroGenCmd = require('./cmds/overwatchgen')
+const Magic8BallCmd = require('./cmds/8ball')
+const JokeCmd = require('./cmds/joke')
+const MemeCmd = require('./cmds/meme')
+const DiceCmd = require('./cmds/dice')
+const RPSCmd = require('./cmds/rps')
+
+var commands = []
+
+const commandFiles = fs
+    .readdirSync("./cmds")
+    .filter((file) => file.endsWith(".js"))
+
+for (const file of commandFiles) {
+    commands[file.slice(0, -3)] = []
+    commands[file.slice(0, -3)].cmd = require(`./cmds/${file}`)
+}
 
 //Command Processing
 var CMDS = function(msg) {
@@ -15,29 +27,8 @@ var CMDS = function(msg) {
     let splitCommand = fullCommand.split(" ")
     let primaryCommand = splitCommand[0].toLowerCase()
     let arguments = splitCommand.splice(1)
-    if (primaryCommand === "help") {
-        HelpCmd(msg, arguments)
-    }
-    if (primaryCommand === "credits") {
-        CreditsCmd(msg, arguments)
-    }
-    if (primaryCommand === "overwatchgen") {
-        OverWatchHeroGenCmd(msg, arguments)
-    }
-    if (primaryCommand === '8ball') {
-        Magic8BallCmd(msg, arguments)
-    }
-    if (primaryCommand === 'joke') {
-        JokeCmd(msg, arguments)
-    }
-    if (primaryCommand === 'meme') {
-        MemeCmd(msg, arguments)
-    }
-    if (primaryCommand === 'dice') {
-        DiceCmd(msg, arguments)
-    }
-    if (primaryCommand === 'rps') {
-        RPSCmd(msg, arguments)
+    if (commands[primaryCommand]) {
+        commands[primaryCommand].cmd(msg, arguments)
     }
 }
 
